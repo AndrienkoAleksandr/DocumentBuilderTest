@@ -1,5 +1,7 @@
 package DocumentBuilderTest;
 
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -52,5 +54,12 @@ public class Application {
         }
         assert document != null;
         System.err.println(document.getTextContent());
+
+        Element element = document.getDocumentElement();
+        NodeList nodes = element.getChildNodes();
+
+        for (int i = 0; i < nodes.getLength(); i++) {
+            System.out.println(nodes.item(i).getNodeName() + " " + nodes.item(i).getTextContent());
+        }
     }
 }
