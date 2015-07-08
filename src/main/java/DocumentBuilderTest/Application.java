@@ -65,7 +65,9 @@ public class Application {
             System.out.println(nodes.item(i).getNodeName() + " " + nodes.item(i).getTextContent());
         }
 
-        System.out.println("@@@ " + element.getElementsByTagName("version").item(0).getTextContent());
+        if (element.getElementsByTagName("version").item(0) != null) {
+            System.out.println("@@@ " + element.getElementsByTagName("version").item(0).getTextContent());
+        }
     }
 
     public static int rootStart(byte[] xml) {
